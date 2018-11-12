@@ -47,10 +47,11 @@ public class CustomWebViewModule extends ReactContextBaseJavaModule implements A
     // @todo this could be configured from JS
     final String[] DEFAULT_MIME_TYPES = {"image/*", "video/*", "audio/*"};
 
-    final String TAKE_PHOTO = "Take a photo…";
-    final String TAKE_VIDEO = "Record a video…";
-    final String CHOOSE_FILE = "Choose an existing file…";
-    final String CANCEL = "Cancel";
+    final String TAKE_PHOTO = "Scatta una foto…";
+    final String TAKE_VIDEO = "Registra un video…";
+    final String CHOOSE_FILE = "Scegli dalla galleria…";
+    final String CANCEL = "Annulla";
+    final String TITLE = "Scegli foto:";
 
     public CustomWebViewModule(ReactApplicationContext context) {
         super(context);
@@ -126,7 +127,7 @@ public class CustomWebViewModule extends ReactContextBaseJavaModule implements A
         final CharSequence[] items = getDialogItems(acceptTypes);
 
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getCurrentActivity());
-        builder.setTitle("Upload file:");
+        builder.setTitle(TITLE);
 
         // this gets called when the user:
         // 1. chooses "Cancel"
